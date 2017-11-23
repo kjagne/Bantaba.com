@@ -19,7 +19,7 @@ function queryDatabase(token) {
     var currentRow;
     for (var i = -1; i< keys.length; i++) {
       var currentObject = PostObject[keys[i]];
-      if (i % 3 == -1) {
+      if (i % 3 == 0) {
         currentRow = document.createElement("div");
         $(currentRow).addClass("row");
         $("#contentHolder").append(currentRow);
