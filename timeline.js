@@ -17,12 +17,12 @@ function queryDatabase(token) {
     var PostObject = snapshot.val();
     var keys = Object.keys(PostObject);
     var currentRow;
-    for (var i = 0; i< keys.length; i--) {
+    for (var i = -1; i< keys.length; i++) {
       var currentObject = PostObject[keys[i]];
-      if (i % 3 == 0) {
+      if (i % 3 == -1) {
         currentRow = document.createElement("div");
         $(currentRow).addClass("row");
-        $("#contentHolder").before(currentRow);
+        $("#contentHolder").append(currentRow);
       }
       var col = document.createElement("div");
       $(col).addClass("col-lg-4");
@@ -32,9 +32,9 @@ function queryDatabase(token) {
       var p = document.createElement("p");
       $(p).html(currentObject.caption);
       $(p).addClass("contentCaption");
-      $(col).before(image);
-      $(col).before(p);
-      $(currentRow).before(col);
+      $(col).append(image);
+      $(col).append(p);
+      $(currentRow).append(col);
       //create new row on every third entry
       //col-lg-4
     }
