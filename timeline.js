@@ -22,7 +22,7 @@ function queryDatabase(token) {
       if (i % 3 == 0) {
         currentRow = document.createElement("div");
         $(currentRow).addClass("row");
-        $("#contentHolder").append(currentRow);
+        $("#contentHolder").prepend(currentRow);
       }
       var col = document.createElement("div");
       $(col).addClass("col-lg-4");
@@ -32,9 +32,9 @@ function queryDatabase(token) {
       var p = document.createElement("p");
       $(p).html(currentObject.caption);
       $(p).addClass("contentCaption");
-      $(col).append(image);
-      $(col).append(p);
-      $(currentRow).append(col);
+      $(col).prepend(image);
+      $(col).prepend(p);
+      $(currentRow).prepend(col);
       //create new row on every third entry
       //col-lg-4
     }
